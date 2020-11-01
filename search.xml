@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Gitee+PicGo+Typora实现个人博客稳定的高速图床</title>
+      <link href="archives/f8364fc.html"/>
+      <url>archives/f8364fc.html</url>
+      
+        <content type="html"><![CDATA[<p>我的个人博客地址：<a href="http://ultrawith.me/">weeeeiiii的个人博客</a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>相信很多人都会使用<code>Hexo</code>配合<code>github</code>来搭建一个自己的个人博客，但由于github服务器在国外，所以我们有时打开博客经常会出现加载10几s的场景，访问速度极慢。这里我们可以配合<code>PicGo+Gitee+Typora</code>实现个人高速稳定图床。以下安装在mac系统上实现，windows配置过程与mac相差无几</p></blockquote><h1 id="安装PicGo"><a href="#安装PicGo" class="headerlink" title="安装PicGo"></a>安装PicGo</h1><ol><li><p>安装<a href="https://molunerfinn.com/PicGo/">PicGo</a>客户端</p></li><li><p>在Picgo里面安装Gitee扩展插件</p><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/%E6%88%AA%E5%B1%8F2020-11-01%20%E4%B8%8B%E5%8D%888.17.07.png" alt="安装gitee插件"></p><p>上图中两个插件差不多，任选一个即可。</p></li></ol><h1 id="注册Gitte账号并创建gitee仓库"><a href="#注册Gitte账号并创建gitee仓库" class="headerlink" title="注册Gitte账号并创建gitee仓库"></a>注册Gitte账号并创建gitee仓库</h1><ol><li><p>在<a href="https://gitee.com/">Gitee</a>上面注册一个账号，创建一个仓库</p><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/%E6%88%AA%E5%B1%8F2020-11-01%20%E4%B8%8B%E5%8D%888.23.30.png" alt="Gitee"></p><p>这里举例创建一个名称为<code>image</code>的仓库，仓库要选公开类型</p></li><li><p>在设置中下拉找到私人令牌，点击创建私人令牌（Token）自行保存好，它只会在创建的时候显示一次，之后就不再显示，只能重新生成或者创建</p></li></ol><h1 id="配置Picgo上的Gitee"><a href="#配置Picgo上的Gitee" class="headerlink" title="配置Picgo上的Gitee"></a>配置Picgo上的Gitee</h1><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/%E6%88%AA%E5%B1%8F2020-11-01%20%E4%B8%8B%E5%8D%888.27.59.min.png" alt="PicGo"></p><p>设置完成后，点击确定以及<code>设为默认图床</code></p><h1 id="测试配置是否成功"><a href="#测试配置是否成功" class="headerlink" title="测试配置是否成功"></a>测试配置是否成功</h1><p>来到Typora设置界面，点击<code>验证图片上传选项</code>，若上传成功则会显示success信息，并在Gitee的image仓库中，会显示出刚上传的两张图片</p><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/%E6%88%AA%E5%B1%8F2020-11-01%20%E4%B8%8B%E5%8D%888.35.04.png" alt="Typora"></p><h1 id="坑点"><a href="#坑点" class="headerlink" title="坑点"></a>坑点</h1><p>若以上步骤均已完成，但是在Typora编辑的过程中，插入图片依旧出现下图错误</p><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/image-20201101204125145.png" alt="上传失败"></p><p>这时，如果复制图片地址，粘贴到浏览器上，浏览器却正确显示图片，这说明我们的确是把图片上传到了我们Gitee上的个人图床上，图片链接没有问题。那么为什么Typora中却显示<code>image load failed</code>呢？</p><p>emmmmmmmmmmmm……………</p><p>其实只要我们换个没有登陆过Gitee的浏览器或者将浏览器的缓存清空即可发现原因，如下图</p><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/image-20201101204723314.png" alt="emmmm...."></p><p>emmmm。。。Gitee默认文件如果大于1M，那么就需要登录账号才能访问。。。这就是为什么Typora显示不了图片的原因</p><p>那么既然发现了问题，解决这个问题也很简单，压缩图片体积就可以了。Mac用户推荐使用<a href="https://www.electronjs.org/apps/image-shrinker">Image Shrinker</a>，一款非常好用的图片压缩工具。下图是我用该软件压缩刚才上传失败的图片大小前后的体积对比</p><p><img src="https://gitee.com/weeeeeei/images/raw/master/img/image-20201101205624010.png" alt="图片体积对比"></p><p>这时我再尝试插入图片<img src="https://gitee.com/weeeeeei/images/raw/master/img/%E6%96%87%E4%BB%B61.min.jpg"></p><p>可以看到图片显示成功，并且清晰度也是非常高的</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gitee </tag>
+            
+            <tag> PicGo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World!</title>
       <link href="archives/1c291ca3.html"/>
       <url>archives/1c291ca3.html</url>

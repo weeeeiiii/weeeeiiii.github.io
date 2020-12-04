@@ -380,7 +380,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
@@ -609,13 +609,14 @@ map<span class="token punctuation">[</span><span class="token string">"key"</spa
 <h2 id="创建单例"><a href="#创建单例" class="headerlink" title="创建单例"></a>创建单例</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">object</span> Resource <span class="token punctuation">{</span>
     <span class="token keyword">val</span> name <span class="token operator">=</span> <span class="token string">"Name"</span>
 <span class="token punctuation">}</span></code></pre>
+<p>在类声明前加<code>object</code></p>
 <h2 id="If-not-null-缩写"><a href="#If-not-null-缩写" class="headerlink" title="If not null 缩写"></a>If not null 缩写</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> files <span class="token operator">=</span> <span class="token function">File</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token function">println</span><span class="token punctuation">(</span>files<span class="token operator">?</span><span class="token punctuation">.</span>size<span class="token punctuation">)</span></code></pre>
 <h2 id="If-not-null-and-else-缩写"><a href="#If-not-null-and-else-缩写" class="headerlink" title="If not null and else 缩写"></a>If not null and else 缩写</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> files <span class="token operator">=</span> <span class="token function">File</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token function">println</span><span class="token punctuation">(</span>files<span class="token operator">?</span><span class="token punctuation">.</span>size <span class="token operator">?:</span> <span class="token string">"empty"</span><span class="token punctuation">)</span></code></pre>
 <h2 id="if-null-执行一个语句"><a href="#if-null-执行一个语句" class="headerlink" title="if null 执行一个语句"></a>if null 执行一个语句</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> values <span class="token operator">=</span> ……
 <span class="token keyword">val</span> email <span class="token operator">=</span> values<span class="token punctuation">[</span><span class="token string">"email"</span><span class="token punctuation">]</span> <span class="token operator">?:</span> <span class="token keyword">throw</span> <span class="token function">IllegalStateException</span><span class="token punctuation">(</span><span class="token string">"Email is missing!"</span><span class="token punctuation">)</span></code></pre>
-<h2 id="在可能会空的集合中取第一元素"><a href="#在可能会空的集合中取第一元素" class="headerlink" title="在可能会空的集合中取第一元素"></a>在可能会空的集合中取第一元素</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> emails <span class="token operator">=</span> …… <span class="token comment" spellcheck="true">// 可能会是空集合</span>
+<h2 id="在可能会空的集合中取第一元素（firstOrNull）"><a href="#在可能会空的集合中取第一元素（firstOrNull）" class="headerlink" title="在可能会空的集合中取第一元素（firstOrNull）"></a>在可能会空的集合中取第一元素（firstOrNull）</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> emails <span class="token operator">=</span> …… <span class="token comment" spellcheck="true">// 可能会是空集合</span>
 <span class="token keyword">val</span> mainEmail <span class="token operator">=</span> emails<span class="token punctuation">.</span><span class="token function">firstOrNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?:</span> <span class="token string">""</span></code></pre>
 <h2 id="if-not-null-执行代码"><a href="#if-not-null-执行代码" class="headerlink" title="if not null 执行代码"></a>if not null 执行代码</h2><pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> value <span class="token operator">=</span> ……
 
@@ -643,7 +644,7 @@ value<span class="token operator">?</span><span class="token punctuation">.</spa
     breadth <span class="token operator">=</span> <span class="token number">5</span>
     color <span class="token operator">=</span> <span class="token number">0xFAFAFA</span>
 <span class="token punctuation">}</span></code></pre>
-<p>这对于配置未出现在对象构造函数中的属性非常有用。</p>
+<p><code>这对于配置未出现在对象构造函数中的属性非常有用。</code></p>
 
             </div>
             <hr/>

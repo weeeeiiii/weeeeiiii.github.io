@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-06
+                    2020-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    566
+                    733
                 </div>
                 
 
@@ -435,6 +435,28 @@
     NotANumber <span class="token operator">-></span> Double<span class="token punctuation">.</span>NaN
     <span class="token comment" spellcheck="true">// 不再需要 `else` 子句，因为已经覆盖了所有的情况</span>
 <span class="token punctuation">}</span></code></pre>
+<ul>
+<li>如果向<code>Expr</code>类新增一个属性，而在eval的<code>when</code>语句当中没有指定具体的处理情况，那么eval方法将无法通过编译。</li>
+<li>Kotlin就是通过这种方法来保证执行到<code>eval</code>方法时验证语句能够覆盖到所有情况。</li>
+</ul>
+<h2 id="嵌套类与内部类"><a href="#嵌套类与内部类" class="headerlink" title="嵌套类与内部类"></a>嵌套类与内部类</h2><p>类可以嵌套在其他类中：</p>
+<pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> Outer <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> bar<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">class</span> Nested <span class="token punctuation">{</span>
+        <span class="token keyword">fun</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">val</span> demo <span class="token operator">=</span> Outer<span class="token punctuation">.</span><span class="token function">Nested</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// == 2</span></code></pre>
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>标记为<code>inner</code>的嵌套类能够访问其外部类的成员。内部类会带有一个对外部类的对象的引用：</p>
+<pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> Outer <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> bar<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">inner</span> <span class="token keyword">class</span> Inner <span class="token punctuation">{</span>
+        <span class="token keyword">fun</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> bar
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">val</span> demo <span class="token operator">=</span> <span class="token function">Outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// == 1</span></code></pre>
 
             </div>
             <hr/>
@@ -884,7 +906,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.8k</span>&nbsp;字
+                class="white-color">6.5k</span>&nbsp;字
             
             
             
